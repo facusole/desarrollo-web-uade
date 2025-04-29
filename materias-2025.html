@@ -4,54 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diseño y Desarrollo Web - Facundo Solé</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          scrollbar-width: none;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="avisos.html">Avisos</a></li>
-        <li><a href="sobre-mi.html">Sobre mi</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="materias-2025.html">Materias 2025</a></li>
-      </ul>
+  <body class="bg-[#070b0a] text-[#e9f1ef] h-screen overflow-x-hidden">
+    <header class="py-6 border-b-[1px] border-[#a9c7c0]">
+      <nav class="text-[#a9c7c0] overflow-x-auto w-full no-scrollbar">
+        <ul
+          class="flex items-center justify-center flex-nowrap whitespace-nowrap pb-2 [&>li>a]:px-4 [&>li>a]:hover:text-[#73cab6] min-w-max"
+        >
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="avisos.html">Avisos</a>
+          </li>
+          <li>
+            <a href="sobre-mi.html">Sobre mi</a>
+          </li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li class="underline underline-offset-4">
+            <a href="materias-2025.html">Materias 2025</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main>
-      <h1>Materias 2025</h1>
-      <section>
-        <h2>Primer cuatrimestre</h2>
-        <ul>
-          <a
-            href="https://virtualbsp.uade.edu.ar/d2l/home/43347"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Diseño y desarrollo web</a
-          >
-        </ul>
-        <ul>
-          Redes de datos I
-        </ul>
-        <ul>
-          Paradigma Orientado a Objetos
-        </ul>
-        <ul>
-          Gestión de Personas en Organizaciones de Tecnología
+    <main
+      class="grid gap-8 lg:gap-4 max-w-[1080px] min-h-full mx-auto px-4 py-12"
+    >
+      <h1 class="text-[#9c82ad] text-center text-3xl font-bold h-fit">
+        Materias 2025
+      </h1>
+      <section class="h-fit">
+        <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+          Primer cuatrimestre
+        </h2>
+        <ul class="[&>li]:before:content-['📖']">
+          <li>
+            <a
+              href="https://virtualbsp.uade.edu.ar/d2l/home/43347"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Diseño y desarrollo web</a
+            >
+          </li>
+          <li>Redes de datos I</li>
+          <li>Paradigma Orientado a Objetos</li>
+          <li>Gestión de Personas en Organizaciones de Tecnología</li>
         </ul>
       </section>
-      <section>
-        <h2>Segundo cuatrimestre</h2>
-        <ul>
-          Diseño y análisis de algoritmos
-        </ul>
-        <ul>
-          Ingeniería de datos I
-        </ul>
-        <ul>
-          Liderazgo y negociación
-        </ul>
-        <ul>
-          Ingeniería de Software
+      <section class="h-fit">
+        <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+          Segundo cuatrimestre
+        </h2>
+        <ul class="[&>li]:before:content-['📖']">
+          <li>Diseño y análisis de algoritmos</li>
+          <li>Ingeniería de datos I</li>
+          <li>Liderazgo y negociación</li>
+          <li>Ingeniería de Software</li>
         </ul>
       </section>
     </main>
+    <footer class="px-4 py-6 border-t-[1px] border-[#a9c7c0]">
+      <ul class="flex justify-center items-center gap-4 lg:gap-12 lg:text-2xl">
+        <li>Curso: 11842</li>
+        <li>Profesora: Patricia Litovicius</li>
+        <li>Alumno: Facundo Solé</li>
+      </ul>
+    </footer>
   </body>
 </html>

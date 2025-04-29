@@ -4,48 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diseño y Desarrollo Web - Facundo Solé</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          scrollbar-width: none;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="avisos.html">Avisos</a></li>
-        <li><a href="sobre-mi.html">Sobre mi</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="materias-2025.html">Materias 2025</a></li>
-      </ul>
-    </header>
-    <main>
-      <h1>Avisos</h1>
-      <section>
-        <ul>
+  <body class="bg-[#070b0a] text-[#e9f1ef] overflow-x-hidden">
+    <header class="py-6 border-b-[1px] border-[#a9c7c0]">
+      <nav class="text-[#a9c7c0] overflow-x-auto w-full no-scrollbar">
+        <ul
+          class="flex items-center justify-center flex-nowrap whitespace-nowrap pb-2 [&>li>a]:px-4 [&>li>a]:hover:text-[#73cab6] min-w-max"
+        >
           <li>
-            <h2>Desarrollo Web</h2>
-            <ul>
+            <a href="index.html">Home</a>
+          </li>
+          <li class="underline underline-offset-4">
+            <a href="avisos.html">Avisos</a>
+          </li>
+          <li>
+            <a href="sobre-mi.html">Sobre mi</a>
+          </li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="materias-2025.html">Materias 2025</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="grid gap-8 lg:gap-16 max-w-[1080px] mx-auto px-4 py-12">
+      <h1 class="text-[#9c82ad] text-center text-3xl font-bold">Avisos</h1>
+      <section class="grid gap-8 lg:gap-16 max-w-[1080px] mx-auto">
+        <ul class="grid gap-12">
+          <li>
+            <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+              Desarrollo Web
+            </h2>
+            <ul class="[&>li]:before:content-['➡️']">
               <li>Entrega actividades obligatorias - 29/04</li>
               <li>Primer parcial - 29/04/2025</li>
               <li>Segundo parcial - 24/06/2025</li>
             </ul>
           </li>
           <li>
-            <h2>Paradigma Orientado a Objetos</h2>
-            <ul>
+            <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+              Paradigma Orientado a Objetos
+            </h2>
+            <ul class="[&>li]:before:content-['➡️']">
               <li>Entrega final proyecto - 21/06/2025</li>
               <li>Parcial - 28/06/2025</li>
               <li>Final regular - 16/07/2025</li>
             </ul>
           </li>
           <li>
-            <h2>Redes de Datos I</h2>
-            <ul>
+            <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+              Redes de Datos I
+            </h2>
+            <ul class="[&>li]:before:content-['➡️']">
               <li>Primer parcial - 05/05/2025</li>
               <li>Segundo parcial - 23/06/2025</li>
               <li>Final regular - 21/07/2025</li>
             </ul>
           </li>
           <li>
-            <h2>Gestión de Personas en Organizaciones de Tecnología</h2>
-            <ul>
+            <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+              Gestión de Personas en Organizaciones de Tecnología
+            </h2>
+            <ul class="[&>li]:before:content-['➡️']">
               <li>Primer parcial - 16/05/2025</li>
               <li>Segundo parcial - 27/06/2025</li>
               <li>Final regular - 25/07-2025</li>
@@ -54,5 +83,12 @@
         </ul>
       </section>
     </main>
+    <footer class="px-4 py-6 border-t-[1px] border-[#a9c7c0]">
+      <ul class="flex justify-center items-center gap-4 lg:gap-12 lg:text-2xl">
+        <li>Curso: 11842</li>
+        <li>Profesora: Patricia Litovicius</li>
+        <li>Alumno: Facundo Solé</li>
+      </ul>
+    </footer>
   </body>
 </html>

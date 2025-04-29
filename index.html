@@ -4,50 +4,289 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diseño y Desarrollo Web - Facundo Solé</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          scrollbar-width: none;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="avisos.html">Avisos</a></li>
-        <li><a href="sobre-mi.html">Sobre mi</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="materias-2025.html">Materias 2025</a></li>
-      </ul>
+  <body class="bg-[#070b0a] text-[#e9f1ef] overflow-x-hidden">
+    <header class="py-6 border-b-[1px] border-[#a9c7c0]">
+      <nav class="text-[#a9c7c0] overflow-x-auto w-full no-scrollbar">
+        <ul
+          class="flex items-center justify-center flex-nowrap whitespace-nowrap pb-2 [&>li>a]:px-4 [&>li>a]:hover:text-[#73cab6] min-w-max"
+        >
+          <li class="underline underline-offset-4">
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="avisos.html">Avisos</a>
+          </li>
+          <li>
+            <a href="sobre-mi.html">Sobre mi</a>
+          </li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="materias-2025.html">Materias 2025</a></li>
+        </ul>
+      </nav>
     </header>
-    <main>
-      <h1>Diseño y Desarrollo Web</h1>
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Materia</th>
-            <th>Día</th>
-            <th>Horario</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Diseño y Desarrollo Web</td>
-            <td>Martes</td>
-            <td>18:30-20:30</td>
-          </tr>
-          <tr>
-            <td>Redes de Datos 1</td>
-            <td>Lunes</td>
-            <td>18:30-22:00</td>
-          </tr>
-          <tr>
-            <td>Paradigma Orientado a Objetos</td>
-            <td>Miércoles</td>
-            <td>18:30-22:00</td>
-          </tr>
-          <tr>
-            <td>Gestión de Personas en Organizaciones de Tecnología</td>
-            <td>Viernes</td>
-            <td>18:30-22:00</td>
-          </tr>
-        </tbody>
-      </table>
+    <main class="grid gap-8 lg:gap-16 w-full max-w-[1080px] mx-auto px-4 py-12">
+      <h1 class="text-[#9c82ad] text-center text-3xl font-bold">
+        Diseño y Desarrollo Web
+      </h1>
+      <section class="grid w-full md:grid-cols-3 gap-y-6 lg:gap-6">
+        <article class="grid gap-y-4">
+          <div class="border border-[#e9f1ef] p-4 rounded-lg w-full">
+            <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+              Fechas de examenes
+            </h2>
+            <ul>
+              <li>Primer parcial - 29/04/2025</li>
+              <li>Segundo parcial - 24/06/2025</li>
+              <li>Final regular - 21/07/2025</li>
+            </ul>
+          </div>
+          <div class="border border-[#e9f1ef] p-4 rounded-lg w-full">
+            <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+              Bibliografia
+            </h2>
+            <ul>
+              <li>
+                <h3 class="font-semibold underline underline-offset-4">
+                  Obligatoria:
+                </h3>
+                <ul class="[&>li]:before:content-['📖']">
+                  <li>
+                    Niederst Robbins, J. (2013). HTML5 pocket reference.
+                    O'Reilly.
+                  </li>
+                  <li>Meyer, E. A. (2018). CSS pocket reference. O'Reilly</li>
+                  <li>Brown, E. (2016). Learning javascript. O'Reilly.</li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="font-semibold underline underline-offset-4">
+                  Complementaria:
+                </h3>
+                <ul class="[&>li]:before:content-['📖']">
+                  <li>Schulz, R. G. (2009). Diseño web con CSS. Alfaomega.</li>
+                  <li>
+                    Firtman, M. (2012). JQuery mobile: Aplicaciones HTML5 para
+                    móviles. Anaya Multimedia.
+                  </li>
+                  <li>
+                    Muñoz Carmona, J. (2021). Despliegue de aplicaciones web.
+                    Síntesis.
+                  </li>
+                  <li>
+                    Freeman, E., Robson, E., Sierra, K., & Bates, B. (2004).
+                    Head First design patterns: a Brain-Friendly Guide. O'Reilly
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article class="col-span-2 border border-[#e9f1ef] p-4 rounded-lg">
+          <h2 class="text-[#9c82ad] text-xl font-semibold mb-6">
+            Actividades UVAs
+          </h2>
+          <ol
+            class="grid gap-4 list-decimal list-outside px-4 [&>li>a]:underline [&>li>a]:underline-offset-4 [&>li>a]:hover:text-[#9c82ad] [&>li>a]:transition-all"
+          >
+            <li>
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/b08a34e50030d085b55b0e488a262e57c0d632bf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ejercicio individual: HTML - Introducción
+              </a>
+              -
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/b08a34e50030d085b55b0e488a262e57c0d632bf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Github</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/b08a34e50030d085b55b0e488a262e57c0d632bf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ejercicio individual: HTML - Etiquetas
+              </a>
+              -
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/b08a34e50030d085b55b0e488a262e57c0d632bf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Github</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/f4c9fff9dd43a44502fb4ad261cb94cfc3931d8d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ejercicio individual: Ejercicio integrador</a
+              >
+              -
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/f4c9fff9dd43a44502fb4ad261cb94cfc3931d8d"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Github</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://facusole.github.io/desarrollo-web-uade/stars-wars.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ejercicio individual: Formato de texto
+              </a>
+              -
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/a6c3463be3672b1a9ebeaa5c0f92b12a2403cb45"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Github</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://facusole.github.io/desarrollo-web-uade/gimnasio.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ejercicio individual: Formato de cajas
+              </a>
+              -
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/6742165d3de1a88c98e765bb6c3b3e1cade67ba9"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Github</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://facusole.github.io/desarrollo-web-uade/chichilo.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ejercicio individual: Unidades de medida
+              </a>
+              -
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/1dbbe08b119104e167638e5730e693153ac875df"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Github</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://facusole.github.io/desarrollo-web-uade/gridflexbox.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ejercicio individual: Grid y Flexbox
+              </a>
+              -
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade/tree/99ecea271c610b24433e2767feca410f4030635c"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Github</a
+              >
+            </li>
+            <li>
+              Trabajo práctico Integrador UVA 2 -
+              <a
+                href="https://github.com/facusole/desarrollo-web-uade"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Github</a
+              >
+            </li>
+          </ol>
+        </article>
+      </section>
+      <section>
+        <div class="relative overflow-x-auto">
+          <table
+            class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-[#e9f1ef] uppercase bg-[#070b0a] border border-[#e9f1ef]"
+            >
+              <tr>
+                <th scope="col" class="px-2 lg:px-6 py-3">Materia</th>
+                <th scope="col" class="px-2 lg:px-6 py-3">Dia</th>
+                <th scope="col" class="px-2 lg:px-6 py-3">Horario</th>
+              </tr>
+            </thead>
+            <tbody class="text-[#e9f1ef]">
+              <tr class="border-b even:bg-[#413d5e] odd:bg-[#9c82ad]">
+                <th
+                  scope="row"
+                  class="px-2 lg:px-6 py-4 font-medium text-[#e9f1ef] whitespace-nowrap"
+                >
+                  Redes de Datos I
+                </th>
+                <td class="px-2 lg:px-6 py-4 text-[#e9f1ef]">Lunes</td>
+                <td class="px-2 lg:px-6 py-4 text-[#e9f1ef]">18:30 - 22:00</td>
+              </tr>
+              <tr class="border-b even:bg-[#413d5e] odd:bg-[#9c82ad]">
+                <th
+                  scope="row"
+                  class="px-2 lg:px-6 py-4 font-medium text-[#e9f1ef] whitespace-nowrap"
+                >
+                  Diseño y Desarrollo Web
+                </th>
+                <td class="px-2 lg:px-6 py-4 text-[#e9f1ef]">Martes</td>
+                <td class="px-2 lg:px-6 py-4 text-[#e9f1ef]">18:30 - 20:30</td>
+              </tr>
+              <tr class="border-b even:bg-[#413d5e] odd:bg-[#9c82ad]">
+                <th
+                  scope="row"
+                  class="px-2 lg:px-6 py-4 font-medium text-[#e9f1ef] whitespace-nowrap"
+                >
+                  Paradigma Orientado a Objetos
+                </th>
+                <td class="px-2 lg:px-6 py-4 text-[#e9f1ef]">Miercoles</td>
+                <td class="px-2 lg:px-6 py-4 text-[#e9f1ef]">18:30 - 22:00</td>
+              </tr>
+              <tr class="border-b even:bg-[#413d5e] odd:bg-[#9c82ad]">
+                <th
+                  scope="row"
+                  class="px-2 lg:px-6 py-4 font-medium text-[#e9f1ef] whitespace-nowrap"
+                >
+                  Gestión de Personas
+                </th>
+                <td class="px-2 lg:px-6 py-4 text-[#e9f1ef]">Viernes</td>
+                <td class="px-2 lg:px-6 py-4 text-[#e9f1ef]">18:30 - 22:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
+    <footer class="px-4 py-6 border-t-[1px] border-[#a9c7c0]">
+      <ul class="flex justify-center items-center gap-4 lg:gap-12 lg:text-2xl">
+        <li>Curso: 11842</li>
+        <li>Profesora: Patricia Litovicius</li>
+        <li>Alumno: Facundo Solé</li>
+      </ul>
+    </footer>
   </body>
 </html>
