@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida Personalizada</title>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            // Solicita al usuario que ingrese sus datos
+            const nombre = prompt("Por favor, ingresa tu nombre:");
+            const apellido = prompt("Ahora, ingresa tu apellido:");
+            const ciudad = prompt("Finalmente, ingresa tu ciudad:");
+
+            // Muestra un mensaje de bienvenida personalizado
+            if (nombre && apellido && ciudad) {
+                alert(`¡Hola, ${nombre} ${apellido} de ${ciudad}! Nos alegra tenerte aquí.`);
+            } else {
+                alert("¡Bienvenido/a! No ingresaste todos tus datos, pero igual nos alegra verte.");
+            }
+        };
+    </script>
+</body>
+</html>

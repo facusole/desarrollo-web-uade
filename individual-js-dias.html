@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Días Vividos</title>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            // Mensaje de bienvenida inicial (similar al ejercicio 1, pero con datos al azar para cumplir con la consigna)
+            const nombreAleatorio = "Juan";
+            const apellidoAleatorio = "Pérez";
+            const ciudadAleatoria = "Buenos Aires";
+            alert(`¡Bienvenido/a, ${nombreAleatorio} ${apellidoAleatorio} de ${ciudadAleatoria}! Nos alegra verte por aquí.`);
+
+            // Solicita al usuario sus datos para la bienvenida personalizada
+            const nombre = prompt("Por favor, ingresa tu nombre:");
+            const apellido = prompt("Ahora, ingresa tu apellido:");
+            const ciudad = prompt("Finalmente, ingresa tu ciudad:");
+
+            // Muestra el mensaje de bienvenida personalizado
+            if (nombre && apellido && ciudad) {
+                alert(`¡Hola, ${nombre} ${apellido} de ${ciudad}! Nos alegra tenerte aquí.`);
+            } else {
+                alert("¡Bienvenido/a! No ingresaste todos tus datos, pero igual nos alegra verte.");
+            }
+
+            // Solicita la fecha de nacimiento para calcular los días vividos
+            let fechaNacimientoStr = prompt("Por favor, ingresa tu fecha de nacimiento (YYYY-MM-DD):");
+            let fechaNacimiento = new Date(fechaNacimientoStr);
+
+            // Valida la fecha ingresada
+            if (isNaN(fechaNacimiento.getTime())) {
+                alert("La fecha de nacimiento ingresada no es válida. No podemos calcular los días vividos.");
+            } else {
+                const fechaActual = new Date();
+                const diferenciaTiempo = fechaActual.getTime() - fechaNacimiento.getTime(); // Diferencia en milisegundos
+                const diasVividos = Math.floor(diferenciaTiempo / (1000 * 60 * 60 * 24)); // Convierte milisegundos a días
+
+                alert(`¡Has vivido aproximadamente ${diasVividos} días desde que naciste!`);
+            }
+        };
+    </script>
+</body>
+</html>
