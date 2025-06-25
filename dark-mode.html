@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es" class="app-theme-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Claro / Oscuro - Clases Específicas</title>
+    <style>
+        :root {
+            --app-bg-color-light: #e9f1ef;
+            --app-text-color-light: #070b0a;
+            --app-header-footer-border-light: #a9c7c0;
+            --app-nav-link-color-light: #a9c7c0;
+            --app-nav-link-hover-light: #73cab6;
+            --app-heading-color-light: #9c82ad;
+            --app-toggle-bg-light: #a9c7c0;
+            --app-toggle-text-light: #070b0a;
+            --app-footer-text-light: #6b7280; /* gray-500 */
+
+            --app-bg-color-dark: #070b0a;
+            --app-text-color-dark: #e9f1ef;
+            --app-header-footer-border-dark: #73cab6;
+            --app-nav-link-color-dark: #73cab6;
+            --app-nav-link-hover-dark: #a9c7c0;
+            --app-heading-color-dark: #b69ac8;
+            --app-toggle-bg-dark: #9c82ad;
+            --app-toggle-text-dark: #e9f1ef;
+            --app-footer-text-dark: #9ca3af; /* gray-400 */
+        }
+
+        /* Estilos generales para el contenedor principal de la app */
+        .app-body-container {
+            font-family: sans-serif;
+            margin: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Estilos del header */
+        .app-header {
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid var(--app-header-footer-border-light);
+            transition: border-color 0.3s ease;
+        }
+
+        /* Estilos de la navegación */
+        .app-nav-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            padding-bottom: 0.5rem;
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .app-nav-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .app-nav-link {
+            padding: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* Estilos del contenido principal */
+        .app-main-content {
+            flex-grow: 1;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Estilos del título */
+        .app-main-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Estilos de los párrafos */
+        .app-paragraph {
+            margin-bottom: 1rem;
+        }
+
+        /* Estilos del footer */
+        .app-footer {
+            padding: 1.5rem 1rem;
+            border-top: 1px solid var(--app-header-footer-border-light);
+            transition: border-color 0.3s ease;
+        }
+
+        .app-footer-text {
+            text-align: center;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Estilos del Toggle Switch */
+        .app-toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .app-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 3rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            background-color: #d1d5db;
+        }
+
+        .app-toggle-switch-input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .app-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--app-toggle-bg-light);
+            transition: all 0.3s ease;
+            border-radius: 9999px;
+        }
+
+        .app-toggle-slider::before {
+            position: absolute;
+            content: "";
+            height: 1.25rem;
+            width: 1.25rem;
+            left: 0.25rem;
+            bottom: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 9999px;
+        }
+
+        .app-toggle-switch-input:checked + .app-toggle-slider {
+            background-color: var(--app-toggle-bg-dark);
+        }
+
+        .app-toggle-switch-input:checked + .app-toggle-slider::before {
+            transform: translateX(1.5rem);
+        }
+
+        .app-toggle-text {
+            margin-left: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        /* --- Modo Claro (Clase en <html>) --- */
+        html.app-theme-light .app-body-container {
+            background-color: var(--app-bg-color-light);
+            color: var(--app-text-color-light);
+        }
+        html.app-theme-light .app-header,
+        html.app-theme-light .app-footer {
+            border-color: var(--app-header-footer-border-light);
+        }
+        html.app-theme-light .app-nav-link {
+            color: var(--app-nav-link-color-light);
+        }
+        html.app-theme-light .app-nav-link:hover {
+            color: var(--app-nav-link-hover-light);
+        }
+        html.app-theme-light .app-main-title {
+            color: var(--app-heading-color-light);
+        }
+        html.app-theme-light .app-toggle-text {
+            color: var(--app-toggle-text-light);
+        }
+        html.app-theme-light .app-footer-text {
+            color: var(--app-footer-text-light);
+        }
+
+
+        /* --- Modo Oscuro (Clase en <html>) --- */
+        html.app-theme-dark .app-body-container {
+            background-color: var(--app-bg-color-dark);
+            color: var(--app-text-color-dark);
+        }
+        html.app-theme-dark .app-header,
+        html.app-theme-dark .app-footer {
+            border-color: var(--app-header-footer-border-dark);
+        }
+        html.app-theme-dark .app-nav-link {
+            color: var(--app-nav-link-color-dark);
+        }
+        html.app-theme-dark .app-nav-link:hover {
+            color: var(--app-nav-link-hover-dark);
+        }
+        html.app-theme-dark .app-main-title {
+            color: var(--app-heading-color-dark);
+        }
+        html.app-theme-dark .app-toggle-text {
+            color: var(--app-toggle-text-dark);
+        }
+        html.app-theme-dark .app-footer-text {
+            color: var(--app-footer-text-dark);
+        }
+    </style>
+</head>
+<body class="app-body-container">
+
+    <header class="app-header">
+        <nav>
+            <ul class="app-nav-list">
+                <li><a href="#" class="app-nav-link">Home</a></li>
+                <li><a href="#" class="app-nav-link">Acerca de</a></li>
+                <li><a href="#" class="app-nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="app-main-content">
+        <h1 class="app-main-title">Modo Claro / Oscuro</h1>
+        <p class="app-paragraph">Este es un ejemplo de contenido. El color de fondo y el texto cambian según el modo seleccionado.</p>
+
+        <div class="app-toggle-container">
+            <label class="app-toggle-switch">
+                <input type="checkbox" id="themeToggle" class="app-toggle-switch-input">
+                <span class="app-toggle-slider"></span>
+            </label>
+            <span class="app-toggle-text">Modo Oscuro</span>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <p class="app-footer-text">&copy; 2025 Facundo Solé. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement; 
+
+        function setTheme(isDark) {
+            if (isDark) {
+                html.classList.remove('app-theme-light');
+                html.classList.add('app-theme-dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('app-theme-dark');
+                html.classList.add('app-theme-light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme) {
+            setTheme(savedTheme === 'dark');
+            themeToggle.checked = (savedTheme === 'dark');
+        } else if (prefersDark) {
+            setTheme(true);
+            themeToggle.checked = true;
+        } else {
+            setTheme(false);
+            themeToggle.checked = false;
+        }
+
+        themeToggle.addEventListener('change', () => {
+            setTheme(themeToggle.checked);
+        });
+    </script>
+</body>
+</html>
